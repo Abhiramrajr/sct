@@ -1,6 +1,7 @@
 import numpy as np
 import skfuzzy as fuzz
 from skfuzzy import control as ctrl
+import matplotlib.pyplot as plt
 
 # Define the fuzzy variables
 dirtiness = ctrl.Antecedent(np.arange(0, 11, 1), 'dirtiness')
@@ -33,12 +34,15 @@ if __name__ == "__main__":
     # Assign values to antecedents
     washing_machine.input['dirtiness'] = 7.5  # Example dirtiness level
     washing_machine.input['strain_type'] = 6  # Example strain type level
-    
+
     # Perform the computation
     washing_machine.compute()
-    
+
     # Output the result
     print("Washing Time : ", washing_machine.output['washing_time'])
-    
+
     # View the result
     washing_time.view(sim=washing_machine)
+
+    # Ensure the plot displays in VS Code
+    plt.show()

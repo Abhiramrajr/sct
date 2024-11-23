@@ -3,7 +3,7 @@ import numpy as np
 from deap import base, creator, algorithms, tools
 
 # Create custom fitness and individual types
-creator.create("FitnessMulti", base.Fitness, weights=(-1.0, -1.0))  # Minimize both distance and time
+creator.create("FitnessMulti", base.Fitness, weights=(-1.0, -1.0))  #Minimize both distance and time
 creator.create("Individual", list, fitness=creator.FitnessMulti)
 
 # Define number of cities and their coordinates
